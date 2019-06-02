@@ -4,7 +4,7 @@ import { toggleFavAction } from '../contexts/actions';
 
 const EpisodesList = lazy(() => import('../components/EpisodesList'));
 
-export default function FavPage() {
+const FavPage = () => {
   const { state, dispatch } = useContext(Store);
   const { favourites } = state;
 
@@ -23,4 +23,6 @@ export default function FavPage() {
       </Suspense>
     </Fragment>
   );
-}
+};
+
+export default FavPage;

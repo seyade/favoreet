@@ -12,21 +12,21 @@ export const reducer = (state, action) => {
       return {
         ...state,
         episodes: action.payload,
-        loading: true,
+        loading: false,
       };
 
     case ADD_FAV:
       return {
         ...state,
         favourites: [...state.favourites, action.payload],
-        loading: true,
+        loading: false,
       };
 
     case REMOVE_FAV:
       return {
         ...state,
         favourites: action.payload,
-        loading: true,
+        loading: false,
       };
 
     default:

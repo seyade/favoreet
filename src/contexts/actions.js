@@ -4,10 +4,8 @@ export const REMOVE_FAV = 'REMOVE_FAV';
 
 export const fetchDataAction = async dispatch => {
   const query = 'person-of-interest';
-  const response = await fetch(
-    `https://api.tvmaze.com/singlesearch/shows?q=${query}&embed=episodes`
-  );
-
+  const URL = `https://api.tvmaze.com/singlesearch/shows?q=${query}&embed=episodes`;
+  const response = await fetch(URL);
   const data = await response.json();
 
   return dispatch({
@@ -18,9 +16,11 @@ export const fetchDataAction = async dispatch => {
 
 export const toggleFavAction = (episode, favourites, dispatch) => {
   const episodeIsInFavourites = favourites.includes(episode);
-  let dispatchData = { type: ADD_FAV, payload: episode };
 
-  console.log('ACTION:TOGGLEFAV::::::');
+  let dispatchData = {
+    type: ADD_FAV,
+    payload: episode,
+  };
 
   if (episodeIsInFavourites) {
     const favouritesWithoutEpsiode = favourites.filter(
