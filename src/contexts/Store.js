@@ -1,40 +1,12 @@
 import React, { createContext, useReducer } from 'react';
 import { FETCH_DATA, ADD_FAV, REMOVE_FAV } from './actions';
 
+import { reducer as rootReducer, initialState } from './reducers';
+
 export const Store = createContext();
 
-const initialState = {
-  episodes: [],
-  favourites: [],
-};
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case FETCH_DATA:
-      return {
-        ...state,
-        episodes: action.payload,
-      };
-
-    case ADD_FAV:
-      return {
-        ...state,
-        favourites: [...state.favourites, action.payload],
-      };
-
-    case REMOVE_FAV:
-      return {
-        ...state,
-        favourites: action.payload,
-      };
-
-    default:
-      return state;
-  }
-};
-
 export const StoreProvider = props => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(rootReducer, initialState);
   const value = { state, dispatch };
 
   return <Store.Provider value={value}>{props.children}</Store.Provider>;
