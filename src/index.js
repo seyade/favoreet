@@ -20,16 +20,3 @@ ReactDOM.render(
   </StoreProvider>,
   document.getElementById('root')
 );
-
-/*
-deposit 100
-rent 170 week
-170 x 4 = 680
-
-sc: 122496
-acc: 00210704
-Rob Brow
-
-
-67 christchurch street, ipswich
-*/

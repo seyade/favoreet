@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, lazy } from 'react';
-import { Store, FETCH_DATA, ADD_FAV, REMOVE_FAV } from '../contexts/Store';
+import { Store } from '../contexts/Store';
+import { FETCH_DATA, ADD_FAV, REMOVE_FAV } from '../contexts/actions';
 
 const EpisodesList = lazy(() => import('../components/EpisodesList'));
 
