@@ -1,6 +1,4 @@
 import React, { createContext, useReducer } from 'react';
-import { FETCH_DATA, ADD_FAV, REMOVE_FAV } from './actions';
-
 import { reducer as rootReducer, initialState } from './reducers';
 
 export const Store = createContext();
