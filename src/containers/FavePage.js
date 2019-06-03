@@ -1,6 +1,7 @@
 import React, { Fragment, Suspense, useContext, lazy } from 'react';
 import { Store } from '../contexts/Store';
 import { toggleFavAction } from '../contexts/actions';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const EpisodesList = lazy(() => import('../components/EpisodesList'));
 
@@ -10,8 +11,7 @@ const FavPage = () => {
 
   return (
     <Fragment>
-      <Suspense fallback={<div className="app-ui__loading">Loading...</div>}>
-        {console.log(state)}
+      <Suspense fallback={<LoadingSpinner />}>
         <article className="episodes">
           <EpisodesList
             episodes={favourites}

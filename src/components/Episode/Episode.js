@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './Episode.scss';
 
 const Episode = ({ episode, favourites, toggleFavAction, dispatch }) => {
@@ -23,6 +24,13 @@ const Episode = ({ episode, favourites, toggleFavAction, dispatch }) => {
       </div>
     </section>
   );
+};
+
+Episode.propTypes = {
+  episode: PropTypes.object.isRequired,
+  favourites: PropTypes.array.isRequired,
+  toggleFavAction: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default Episode;

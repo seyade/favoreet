@@ -7,7 +7,7 @@ const EpisodesList = lazy(() => import('../components/EpisodesList'));
 
 const HomePage = () => {
   const { state, dispatch } = useContext(Store);
-  const { episodes, favourites, loading } = state;
+  const { episodes, favourites } = state;
 
   useEffect(() => {
     episodes.length === 0 && fetchDataAction(dispatch);
@@ -16,7 +16,6 @@ const HomePage = () => {
   return (
     <Fragment>
       <Suspense fallback={<LoadingSpinner />}>
-        {console.log(state)}
         <article className="episodes">
           <EpisodesList
             episodes={episodes}

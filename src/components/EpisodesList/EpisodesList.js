@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Episode from '../Episode';
 
 const EpisodesList = props => {
@@ -15,6 +16,13 @@ const EpisodesList = props => {
       />
     );
   });
+};
+
+EpisodesList.propTypes = {
+  episodes: PropTypes.array.isRequired,
+  favourites: PropTypes.array.isRequired,
+  toggleFavAction: PropTypes.func.isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 export default EpisodesList;
